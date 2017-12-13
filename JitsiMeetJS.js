@@ -367,7 +367,8 @@ export default _mergeNamespaceAndModule({
             .catch(error => {
                 promiseFulfilled = true;
 
-                if (error.name === JitsiTrackErrors.UNSUPPORTED_RESOLUTION
+                const dontRetry = true;
+                if (!dontRetry && error.name === JitsiTrackErrors.UNSUPPORTED_RESOLUTION
                     && !browser.usesNewGumFlow()) {
                     const oldResolution = options.resolution || '720';
                     const newResolution = getLowerResolution(oldResolution);
