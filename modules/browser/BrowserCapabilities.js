@@ -199,9 +199,7 @@ export default class BrowserCapabilities extends BrowserDetection {
         // FIXME: Check if we can use supportsVideoOut and supportsVideoIn. I
         // leave the old implementation here in order not to brake something.
 
-        // Currently Safari using webrtc/adapter does not support video due in
-        // part to Safari only supporting H264 and the bridge sending VP8.
-        return !this.isSafariWithWebrtc();
+        return true;
     }
 
     /**
